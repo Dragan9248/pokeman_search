@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поиск Покемона</title>
+</head>
+<body>
+  <form action="/search" method="GET">
+    <input type="text" name="query">
+    <button type="submit">Поиск</button>
+  </form>
+  {% if ctx_lst %}
+    <ul>
+      {% for pokemon in ctx_lst %}
+        <li>{{ pokemon.name.english }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No Pokemons found</p>
+  {% endif %}
+</body>
+</html>
+
+
+
+
+
